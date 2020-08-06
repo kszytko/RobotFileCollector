@@ -1,14 +1,9 @@
 name: C++ with Make CI
 
 on:
-  pull_request:
-    branches:
-      - homeworkSHM1
-    paths:
-      - 'shm/*'
   push:
-    paths:
-      - 'shm/*'
+    branches:
+      - master
 
 jobs:
   shm:
