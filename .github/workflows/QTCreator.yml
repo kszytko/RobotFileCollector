@@ -29,10 +29,6 @@ jobs:
             name: "Linux Latest x64", artifact: "Linux-x64.zip",
             os: ubuntu-latest
           }
-    #    - {
-     #       name: "macOS Latest x64", artifact: "macOS-x64.zip",
-      #      os: macos-latest
-      #    }
 
     steps:
     - uses: actions/checkout@v1
@@ -67,10 +63,6 @@ jobs:
           set(url_os "linux_x64")
           set(qt_package_name "qt.qt5.${qt_version_dotless}.gcc_64")
           set(qt_dir_prefix "${qt_version}/gcc_64")
-      #  elseif ("${{ runner.os }}" STREQUAL "macOS")
-      #    set(url_os "mac_x64")
-      #    set(qt_package_name "qt.qt5.${qt_version_dotless}.clang_64")
-      #    set(qt_dir_prefix "${qt_version}/clang_64")
         endif()
 
         set(qt_base_url "https://download.qt.io/online/qtsdkrepository/${url_os}/desktop/qt5_${qt_version_dotless}")
@@ -106,7 +98,6 @@ jobs:
         string(REPLACE "Enterprise" "OpenSource" qtconfig "${qtconfig}")
         string(REPLACE "licheck.exe" "" qtconfig "${qtconfig}")
         string(REPLACE "licheck64" "" qtconfig "${qtconfig}")
-     #   string(REPLACE "licheck_mac" "" qtconfig "${qtconfig}")
         file(WRITE "qt5/${qt_dir_prefix}/mkspecs/qconfig.pri" "${qtconfig}")
 
     - name: Download Qt Creator
@@ -128,7 +119,6 @@ jobs:
           set(qtc_output_directory "qtcreator/lib/qtcreator/plugins")
           set(qtc_binary_name "lib$ENV{PLUGIN_NAME}.so")
           set(qtc_platform "linux_gcc_64_rhel72")
-
         endif()
 
         # Save the path for other steps
@@ -143,8 +133,6 @@ jobs:
           execute_process(COMMAND
             ${CMAKE_COMMAND} -E tar xvf ../${package}.7z WORKING_DIRECTORY qtcreator)
         endforeach()
-
-
 
     - name: Configure
       shell: cmake -P {0}
