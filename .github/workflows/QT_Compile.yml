@@ -1,0 +1,31 @@
+name: C++ with Make CI
+
+on:
+  pull_request:
+    branches:
+      - homeworkSHM1
+    paths:
+      - 'shm/*'
+  push:
+    paths:
+      - 'shm/*'
+
+jobs:
+  shm:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v2.8.0
+      with:
+        version: '5.12.9'
+        host: 'windows'
+        target: 'desktop'
+        arch: 'win64_msvc2019_64'
+        dir: '${{ github.workspace }}/example/'
+        install-deps: 'true'
+       # modules: 'qtcharts qtwebengine'
+       # mirror: 'http://mirrors.ocf.berkeley.edu/qt/'
+        cached: 'false'
+       # aqtversion: '==0.9.4'
+       # py7zrversion: '==0.9.1'
+       # extra: '--external 7z'
