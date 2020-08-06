@@ -5,8 +5,8 @@ on: [push]
 env:
   QT_VERSION: 5.14.0
   QT_CREATOR_VERSION: 4.11.0
-  PLUGIN_PRO: doxygen.pro
-  PLUGIN_NAME: Doxygen
+  PLUGIN_PRO: robotFileCollector2.pro
+  PLUGIN_NAME: RobotFileCollector
 
 jobs:
   build:
