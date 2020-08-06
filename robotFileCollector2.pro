@@ -18,29 +18,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    src/configreader.cpp \
-    src/downloadReader.cpp \
-    src/filereader.cpp \
-    src/foldergenerator.cpp \
-    src/folderreader.cpp \
-    src/madareader.cpp \
-    src/readable.cpp \
-    src/safetyreader.cpp
+
 
 HEADERS += \
     mainwindow.h \
-    src/Debuger.h \
-    src/DebugerSetter.h \
-    src/ProgressBarUse.h \
-    src/Robot.h \
-    src/configreader.h \
-    src/downloadReader.h \
-    src/filereader.h \
-    src/foldergenerator.h \
-    src/folderreader.h \
-    src/madareader.h \
-    src/readable.h \
-    src/safetyreader.h
+
 
 FORMS += \
     mainwindow.ui
